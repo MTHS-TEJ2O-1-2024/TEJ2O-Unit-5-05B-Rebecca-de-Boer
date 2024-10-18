@@ -15,7 +15,6 @@ basic.showIcon(IconNames.Happy)
 input.onGesture(Gesture.Shake, function () {
     randomNumber = randint(0, 2)
 
-
     if (randomNumber == 0) {
         basic.showIcon(IconNames.SmallSquare)
     }
@@ -32,13 +31,16 @@ input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Happy)
 })
 
-input.buttonIsPressed(Button.A)
-{
- score = score +1
-}
+input.onButtonPressed(Button.A, function () {
+  basic.showIcon(IconNames.Yes)    
+  score = score +1
+  basic.pause(500)
+  basic.showIcon(IconNames.Happy)
+})
 
 input.onButtonPressed(Button.B, function () {
-    basic.showString("score:" + score)
+    basic.clearScreen()
+    basic.showString('Score: ' + score)
     basic.pause(500)
     basic.showIcon(IconNames.Happy)
 })
