@@ -34,7 +34,7 @@ input.onGesture(Gesture.Shake, function () {
 
 input.buttonIsPressed(Button.A)
 {
-    basic.showString("score" + score + 1)
+ score = score +1
 }
 
 input.onButtonPressed(Button.B, function () {
